@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script>
+      var details=[];
+      function submit() {
+        var temp;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var name=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var time = new Date();
+
+        if(name === "") {
+          alert("Please fill out the Username field.");
+          document.getElementById("namecheck").style.color = "red";
+          document.getElementById("namecheck").style.fontFamily = "Arial";
+          document.getElementById("namecheck").style.fontSize = "larger";
+        }
+        else if(!filter.test(email)) {
+          alert("Please fill out email field.");
+          document.getElementById("emailcheck").style.color = "red";
+          document.getElementById("emailcheck").style.fontFamily = "Arial";
+          document.getElementById("emailcheck").style.fontSize = "larger";
+        }
+        else{
+          details.push(name,email,time);
+          localStorage.setItem("Details",JSON.stringify(details));
+        }
+      }
+
+      function view() {
+        var p1=document.getElementById("p1");
+        var boiler = "<table border=1 border-collapse=collapse>"+
+          "<tr>"+
+          "<th>Name</th>"+
+          "<th>Email</th>"+
+          "<th>Time</th>"+
+          "</tr>";
+
+        document.write(boiler);
+
+        var array=localStorage.getItem("Details").split(',');
+
+        for(var i=0;i<array.length;i++) {
+          var boiler1 = "<tr>"+
+          "<td>"+array[i]+"</td>"+
+          "<td>"+array[++i]+"</td>"+
+          "<td>"+array[++i]+"</td>";
+          document.write(boiler1);
+        }
+        document.write("</table>");
+      }
+    </script>
+  </head>
+
+  <body align=centre>
+    <table>
+      <tr id="namecheck">
+        <td>Name</td>
+        <td><input type=text id="name"></td>
+      </tr>
+
+      <tr id="emailcheck">
+        <td>Email</td>
+        <td><input type=Email id="email"></td>
+      </tr>
+
+      <tr>
+        <td><button onClick="submit()">Submit</button></td>
+        <td><button onClick="view()">view Details</button></td>
+      </tr>
+    </table>
+  </body>
+</html>
