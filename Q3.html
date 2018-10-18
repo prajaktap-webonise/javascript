@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+<h1>magic</h1>
+<input type="button" onclick="openme()" value="clik me">
+<h1>pause</h1>
+<input type="button" onclick="closeme()" value="pauseme">
+    <script type="text/javascript" >
+var pause1, pause2, pause3, pause4;
+
+        function openme()
+ {
+
+	var page1 = window.open("https://www.google.com");
+	var page2 = window.open("https://www.gmail.com");
+	var page3 = window.open("https://www.apple.com");
+	var page4 = window.open("https://www.amazon.in/");
+	var page5 = window.open("https://www.weboniselab.com");
+
+
+      	pause1=setTimeout(function()
+	{
+	page1.close()
+	},20000);
+
+      	pause2=setTimeout(function()
+	{
+	page2.close()
+	},16000);
+
+	pause3=setTimeout(function()
+	{
+	page3.close()
+	},14000);
+
+      	pause4=setTimeout(function()
+	{
+	page4.close()
+	},10000);
+	pause5=setTimeout(function()
+	{
+	page5.close()
+	},8000);
+  
+}
+
+
+function closeme()
+ {
+    clearTimeout(pause1);
+    clearTimeout(pause2);
+	clearTimeout(pause3);
+	clearTimeout(pause4);
+	clearTimeout(pause5);
+}
+
+
+    </script>
+</body>
+
+</html>
+

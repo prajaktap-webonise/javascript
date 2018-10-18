@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Calculator</title>
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <input id="in1" type="text" required="required" />
+<input id="in2" type="text" required="required" />
+<button onclick="add()">add</button>
+  <button onclick="subtract()">sub</button>
+  <h3 id="cal"></h3>
+
+  <script lang="javascript">
+	
+	function add() {
+	var input1 = parseInt(document.getElementById("in1").value);
+	var input2 = parseInt(document.getElementById("in2").value);
+	var sum = input1 + input2;
+	if(isNaN(sum))
+	{
+		alert("Both number should be numbers");
+	}
+	else{
+	document.getElementById("cal").innerHTML = sum;	
+	}
+	
+	      
+	    }
+
+	function subtract() {
+	var input1 = parseInt(document.getElementById("in1").value);
+	var input2 = parseInt(document.getElementById("in2").value);
+
+	var sub = input1 - input2;
+	if(isNaN(sub))
+	{
+		alert("Both number should be numbers");
+	}
+	else{
+	document.getElementById("cal").innerHTML = sub;	
+	}
+	
+
+	
+	      
+	    }
+  </script>
+</body>
+
+</html>
