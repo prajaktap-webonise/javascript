@@ -9,13 +9,13 @@
         var email=document.getElementById("email").value;
         var time = new Date();
 
-        if(name === ""){
+        if(name === "") {
           alert("Please fill out the Username field.");
           document.getElementById("namecheck").style.color = "red";
           document.getElementById("namecheck").style.fontFamily = "Arial";
           document.getElementById("namecheck").style.fontSize = "larger";
         }
-        else if(!filter.test(email)){
+        else if(!filter.test(email)) {
           alert("Please fill out email field.");
           document.getElementById("emailcheck").style.color = "red";
           document.getElementById("emailcheck").style.fontFamily = "Arial";
