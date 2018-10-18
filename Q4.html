@@ -29,21 +29,23 @@
 
       function view() {
         var p1=document.getElementById("p1");
+        var boiler = "<table border=1 border-collapse=collapse>"+
+          "<tr>"+
+          "<th>Name</th>"+
+          "<th>Email</th>"+
+          "<th>Time</th>"+
+          "</tr>";
 
-        document.write("<table border=1 border-collapse=collapse>");
-        document.write("<tr>");
-        document.write("<th>Name</th>");
-        document.write("<th>Email</th>");
-        document.write("<th>Time</th>");
-        document.write("</tr>");
+        document.write(boiler);
 
         var array=localStorage.getItem("Details").split(',');
 
         for(var i=0;i<array.length;i++) {
-          document.write("<tr>");
-          document.write("<td>"+array[i]+"</td>");
-          document.write("<td>"+array[++i]+"</td>");
-          document.write("<td>"+array[++i]+"</td>");
+          var boiler1 = "<tr>"+
+          "<td>"+array[i]+"</td>"+
+          "<td>"+array[++i]+"</td>"+
+          "<td>"+array[++i]+"</td>";
+          document.write(boiler1);
         }
         document.write("</table>");
       }

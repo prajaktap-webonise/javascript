@@ -16,15 +16,14 @@
     <script lang="javascript">
 
       function add() {
-
         var input1 = parseInt(document.getElementById("in1").value);
         var input2 = parseInt(document.getElementById("in2").value);
         var sum = input1 + input2;
 
           if(isNaN(sum))
-          alert("Both number should be numbers");
+            alert("Both number should be numbers");
           else
-          document.getElementById("cal").innerHTML = sum;
+            document.getElementById("cal").innerHTML = sum;
       }
 
       function subtract() {
@@ -33,9 +32,9 @@
         var sub = input1 - input2;
 
         if(isNaN(sub))
-        alert("Both number should be numbers");
+          alert("Both number should be numbers");
         else
-        document.getElementById("cal").innerHTML = sub;
+          document.getElementById("cal").innerHTML = sub;
       }
 </script>
 </body>
